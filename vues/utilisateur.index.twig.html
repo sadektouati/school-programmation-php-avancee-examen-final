@@ -1,0 +1,25 @@
+{% extends "base.twig.html" %}
+{% block main %}
+    {# [MODIF HORS COURS] #}
+    {# Tous les messages d'erreurs sont affiché dans le bloc suivant dont l'affichage est géré en CSS #}
+    {% if erreur != '' %}
+    <div class="msg-erreur">{{erreur}}</div>
+    {% endif %}
+    <div class="page-utilisateur">
+        <form class="connexion" method="post" action="utilisateur/connexion">
+            <fieldset>
+                <legend>Ouvrir une connexion</legend>
+                <label>
+                    Courriel
+                    <input autofocus type="email" name="uti_courriel" placeholder="Adresse courriel" required>
+                </label>
+                <label>
+                    Mot de passe
+                    <input type="password" name="uti_mdp" required pattern="\w{8,50}">
+                </label>
+                <input type="submit" value="Connexion">
+            </fieldset>
+            <a href="utilisateur/nouveau"><div class="basculer-formulaire">Créer un compte</div></a>
+        </form>
+    </div>
+{% endblock %}

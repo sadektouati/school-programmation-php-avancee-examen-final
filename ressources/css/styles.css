@@ -1,0 +1,247 @@
+@keyframes animer-sortie-message {
+    from {
+      transform: skew(0) translateX(-50%);
+      opacity: 1;
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    20% {
+      transform: skew(-30deg) translateX(-55%);
+      opacity: 1;
+      -webkit-animation-timing-function: ease-in-out;
+              animation-timing-function: ease-in-out;
+    }
+    40% {
+      transform: skew(0) translateX(0%);
+      opacity: 1;
+      -webkit-animation-timing-function: ease-in-out;
+              animation-timing-function: ease-in-out;
+    }
+    to {
+      transform: skew(30deg) translateX(100%);
+      opacity: 0;
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Verdana;
+    color: #444;
+    background-color: #d5d5d5;
+    padding: 20px;
+    font-size: 18px;
+    overflow-x: hidden;
+}
+
+.page-taches {
+    font-size: 2em;
+}
+
+a, a:visited, a:link, a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.conteneur {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    margin: 1.5rem 0;
+}
+
+.logo:hover {
+    opacity: 0.9;
+}
+
+.logo img {
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto;
+}
+
+input.quoi-faire {
+    width: 99%;
+    padding: 15px;
+    font-size: 36px;
+    padding-left: 50px;
+    box-shadow: 10px 10px 15px 1px #ababab;
+    border: none;
+    margin: 20px 0;
+}
+
+div.filtres {
+    margin-bottom: 0px;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 0.5em;
+}
+
+div.filtres a {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    background-color: #666;
+    color: #eee;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px 1px lightslategrey;
+}
+
+div.filtres a:hover, 
+div.filtres a.actif {
+    background-color: #000;
+    color: #fff;
+}
+
+div.aucune-tache {
+    width: 20rem;
+    margin: 0 auto;
+    color: #090;
+}
+
+ul.liste-taches {
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
+    background-color: white;
+    width: 99%;
+}
+
+ul.liste-taches li {
+    cursor: default;
+    border-bottom: 5px solid #d5d5d5;
+    padding: 20px;
+    position: relative;
+}
+
+ul.liste-taches li:hover {
+    background-color: khaki;
+}
+
+ul.liste-taches li span.coche img {
+    vertical-align: middle;
+    width: 70px;
+}
+
+ul.liste-taches li.accomplie {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+ul.liste-taches li span.ajout {
+    font-size: 0.5em;
+    font-family: Georgia;
+    font-style: italic;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+/*
+    Vue : Utilisateur
+*/
+
+body .msg-erreur {
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #900;
+    color: #eee;
+    width: 40%;
+    margin: 0 auto 1rem auto;
+    padding: 0.5rem;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    -webkit-animation: animer-sortie-message 0.75s 3s forwards;
+            animation: animer-sortie-message 0.75s 3s forwards;
+}
+
+.barre-utilisateur {
+    display: flex;
+    justify-content: space-between;
+}
+
+.barre-utilisateur .btn-logout {
+    margin-right: 30px;
+    display: inline-block;
+    padding: 10px;
+    background-color: #990000;
+    color: white;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    box-shadow: 2px 2px 10px 1px rgba(150, 0, 0, 0.4);
+}
+
+.barre-utilisateur .nom-utilisateur {
+    font-style: italic;
+    margin-left: 20px;
+}
+
+.page-utilisateur form {
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+.page-utilisateur form .basculer-formulaire {
+    text-align: right;
+    margin: 10px;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 1s;
+}
+
+.page-utilisateur form .basculer-formulaire:hover {
+    text-decoration: none;
+    color: #990000;
+}
+
+.page-utilisateur form input:not([type=submit]) {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    font-size: 1.25em;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+}
+
+.page-utilisateur form input:not([type=submit]):invalid {
+    color: #990000;
+}
+
+.page-utilisateur form input[type=submit] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 25px 0 10px 0;
+    font-size: 1.25em;
+    cursor: pointer;
+}
+
+.page-utilisateur form fieldset {
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 20px 50px;
+}
+
+.page-utilisateur form legend {
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #333;
+    color: #eee;
+}

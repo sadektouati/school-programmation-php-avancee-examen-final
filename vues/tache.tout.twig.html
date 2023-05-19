@@ -1,0 +1,28 @@
+{% extends "base.twig.html" %}
+{% block main %}
+<div class="page-taches">
+    <form method="post" action="tache/ajouter" autocomplete="off">
+        <input required pattern=".*\S{2,}.*" autofocus class="quoi-faire" type="text" name="tac_texte" placeholder="Tâche à accomplir ...">
+    </form>
+    <div class="filtres">
+        <a href="tache/tout?etat=1" class="{{ (selection == 1) ? 'actif' : '' }} ">Complétées</a>
+        <a href="tache/tout?etat=0"  class="{{ (selection == 0) ? 'actif' : '' }} ">Non-complétées</a>
+        <a href="tache/tout" class="{{ selection==-1 ? 'actif' : '' }} ">Toutes</a>
+    </div>
+    {% if taches %}
+        <ul class="liste-taches">
+            {% for cetteTache in taches %}
+            <li class="{{ (cetteTache.tac_accomplie == 1) ? 'accomplie' : '' }} ">
+                <span class="{{ (cetteTache.tac_accomplie == 0) ? 'coche' : '' }}"><a href="tache/basculer?tid={{ cetteTache.tac_id }}" title="Cliquez pour faire basculer l'état de cette tâche."><img src="ressources/images/coche.svg" alt=""></a></span>
+                <span class="texte">{{ cetteTache.tac_texte }}</span>
+                <span class="ajout">{{ cetteTache.tac_date_ajout }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="aucune-tache">
+            Rien a signaler
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
