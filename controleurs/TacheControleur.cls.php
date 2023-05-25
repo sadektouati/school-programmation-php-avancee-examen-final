@@ -4,7 +4,7 @@ class TacheControleur extends Controleur
     function __construct($modele, $module, $action, $params)
     {
         if(!isset($_SESSION['utilisateur'])) {
-            Utilitaire::nouvelleRoute('utilisateur/index');
+            Utilitaire::nouvelleRoute('/utilisateur/index');
         }
         
         parent::__construct($modele, $module, $action, $params);
@@ -31,7 +31,7 @@ class TacheControleur extends Controleur
         
         $this->modele->basculeTache($_SESSION['utilisateur']->uti_id, $_GET["tid"]);
         //Redirige vers la page des taches
-        Utilitaire::nouvelleRoute('tache/tout');
+        Utilitaire::nouvelleRoute('/tache/tout');
     }
 
     public function ajouter() {
@@ -39,7 +39,7 @@ class TacheControleur extends Controleur
         $identifiant = $this->modele->ajouter($_SESSION['utilisateur']->uti_id, $texte);
         if(is_numeric( $identifiant)){
         //Redirige vers la page des taches
-        Utilitaire::nouvelleRoute('tache/tout');
+        Utilitaire::nouvelleRoute('/tache/tout');
         }else{
             //en doit gerer l'erreur ici.. mais c'est pas demandé...
             echo 'il y a un probleme';

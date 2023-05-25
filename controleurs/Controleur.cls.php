@@ -35,6 +35,5 @@ class Controleur
     // Action par défaut : donc méthode obligatoire
     public function index() 
     {
-
     }
 }

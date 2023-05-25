@@ -1,6 +1,4 @@
 <?php
-// URL de base du serveur
-const BASE_SERVEUR = 'http://localhost/';
 
 // Config de la BD
 const BD_HOTE = 'localhost';

@@ -31,7 +31,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # le nom du serveur) vers index.php?route=chemin
 # Pour le moment je ne vais pas vous expliquer l'option (flag) [QSA] : si vous 
 # êtes trop curieux, consultez la documentation officielle à l'adresse suivante: 
-# https://httpd.apache.org/docs/current/rewrite/flags.html
+# https:/httpd.apache.org/docs/current/rewrite/flags.html
 RewriteRule ^(.*)$ index.php?route=$1 [QSA]
 ################################################################################
 

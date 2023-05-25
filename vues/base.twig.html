@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <base href="{{ constant('BASE_SERVEUR') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;900&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="ressources/css/styles.css">
-    <link rel="icon" type="image/ico" href="ressources/images/favicon.ico" />
+    <link rel="stylesheet" href="/ressources/css/styles.css">
+    <link rel="icon" type="image/ico" href="/ressources/images/favicon.ico" />
     {% block titrePage %}
         <title>MEMO | Liste de tâches à compléter</title>
     {% endblock %}
@@ -19,11 +18,11 @@
         {% if session.utilisateur %}
         <div class="barre-utilisateur">
             <span class="nom-utilisateur">{{session.utilisateur.uti_courriel}}</span>
-            <span class="btn-logout"><a href="utilisateur/deconnexion">Déconnexion</a></span>
+            <span class="btn-logout"><a href="/utilisateur/deconnexion">Déconnexion</a></span>
         </div>
         {% endif %}
-        <a href="utilisateur/index" class="logo">
-            <img src="ressources/images/memo-logo.png" alt="MEMO">
+        <a href="/utilisateur/index" class="logo">
+            <img src="/ressources/images/memo-logo.png" alt="MEMO">
         </a>
 
         {% block main %}{% endblock %}

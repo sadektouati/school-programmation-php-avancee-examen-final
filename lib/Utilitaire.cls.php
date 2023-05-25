@@ -6,7 +6,7 @@ class Utilitaire
      */
     public static function nouvelleRoute($route="")
     {
-        header('Location: '.BASE_SERVEUR.$route);
+        header('Location: ' . $route);
     }
 
     /**
@@ -17,7 +17,8 @@ class Utilitaire
      */
     public static function nouvelleRouteErreur($erreur='400', $info=[])
     {
-        header('Location: '.BASE_SERVEUR.'pages-erreurs/'.$erreur.'.html?'.$info[0].'/'.$info[1].'/'.$info[2]);
+        
+        header('Location: /pages-erreurs/'.$erreur.'.html?'.$info[0].'/'.$info[1].'/'.$info[2]);
     }
 
     /**

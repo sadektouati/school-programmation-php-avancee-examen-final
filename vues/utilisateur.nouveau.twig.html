@@ -6,7 +6,7 @@
     <div class="msg-erreur">{{erreur}}</div>
     {% endif %}
     <div class="page-utilisateur">
-        <form class="nouveau-compte" method="post" action="utilisateur/ajouter">
+        <form class="nouveau-compte" method="post" action="/utilisateur/ajouter">
             <fieldset>
                 <legend>Créer un nouveau compte</legend>
                 <label>
@@ -28,7 +28,7 @@
                 
                 <input type="submit" value="Créer le compte">
             </fieldset>
-            <a href="utilisateur/index"><div class="basculer-formulaire">Ouvrir une connexion</div></a>
+            <a href="/utilisateur/index"><div class="basculer-formulaire">Ouvrir une connexion</div></a>
         </form>
     </div>
 {% endblock %}
